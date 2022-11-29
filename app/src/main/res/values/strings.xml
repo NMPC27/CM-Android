@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Cinem@</string>
+    <string name="title_map">Map</string>
+    <string name="title_cinemas">Cinemas</string>
+    <string name="title_tickets">Tickets</string>
+    <string name="title_notifications">Notifications</string>
+
+</resources>
