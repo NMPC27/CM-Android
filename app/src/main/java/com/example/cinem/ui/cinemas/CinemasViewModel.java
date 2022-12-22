@@ -9,6 +9,7 @@ public class CinemasViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
     public CinemasViewModel() {
+        
         mText = new MutableLiveData<>();
         mText.setValue("This is Cinemas fragment");
     }
