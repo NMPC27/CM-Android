@@ -23,6 +23,10 @@
             android:value="AIzaSyAG6Lut1-ImEdQfDVnWe2Ydc70hWopWNNA" />
 
         <activity
+            android:name=".ui.tickets.QrCode"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name=".Menu"
             android:screenOrientation="portrait"
             android:exported="false" />
