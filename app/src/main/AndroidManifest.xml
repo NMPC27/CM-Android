@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -15,23 +17,33 @@
         android:theme="@style/Theme.Cinem"
         tools:targetApi="31" >
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAG6Lut1-ImEdQfDVnWe2Ydc70hWopWNNA" />
+
         <activity
             android:name=".Menu"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.cinemas.SelectMovie"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.cinemas.MovieInfo"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity
             android:name=".ui.cinemas.SelectSchedule"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity
             android:name=".ui.cinemas.Fingerprint"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:label="@string/app_name" >
             <intent-filter>
@@ -43,6 +55,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
         </activity>
     </application>
 
