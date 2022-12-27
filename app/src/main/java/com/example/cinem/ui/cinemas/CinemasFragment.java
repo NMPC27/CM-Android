@@ -61,7 +61,7 @@ public class CinemasFragment extends Fragment {
     private void addCard(String name, int id) {
         final View view = getLayoutInflater().inflate(R.layout.list_cinema, null);
 
-        TextView name_cinema = view.findViewById(R.id.ticket_list);
+        TextView name_cinema = view.findViewById(R.id.list_notf);
 
         name_cinema.setText(name);
 

@@ -91,7 +91,7 @@ public class SelectMovie extends AppCompatActivity {
     private void addCard(String name, String img, String filme_id) {
         final View view = getLayoutInflater().inflate(R.layout.list, null);
 
-        TextView nameView = view.findViewById(R.id.ticket_list);
+        TextView nameView = view.findViewById(R.id.list_notf);
         ImageView movie_img = view.findViewById(R.id.movieImg);
 
 

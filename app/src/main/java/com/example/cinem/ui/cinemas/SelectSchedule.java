@@ -138,7 +138,7 @@ public class SelectSchedule extends AppCompatActivity {
     private void addCard(String horas) {
         final View view = getLayoutInflater().inflate(R.layout.list_horas, null);
 
-        TextView hora = view.findViewById(R.id.ticket_list);
+        TextView hora = view.findViewById(R.id.list_notf);
 
         hora.setText(horas);
 

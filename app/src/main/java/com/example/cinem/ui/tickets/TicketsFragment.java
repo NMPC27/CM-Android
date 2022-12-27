@@ -1,6 +1,5 @@
 package com.example.cinem.ui.tickets;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,14 +14,11 @@ import androidx.fragment.app.Fragment;
 import com.example.cinem.Menu;
 import com.example.cinem.R;
 import com.example.cinem.databinding.FragmentTicketsBinding;
-import com.example.cinem.ui.cinemas.SelectMovie;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
-import org.json.JSONObject;
 
 public class TicketsFragment extends Fragment {
 
@@ -73,7 +69,7 @@ public class TicketsFragment extends Fragment {
     private void addCard(String filme, String cinema, String sessao, int numBilhetes, String qrCode, String filme_id) {
         final View view = getLayoutInflater().inflate(R.layout.list_tickets, null);
 
-        TextView name_movie = view.findViewById(R.id.ticket_list);
+        TextView name_movie = view.findViewById(R.id.list_notf);
         TextView description = view.findViewById(R.id.description);
 
         name_movie.setText(filme);

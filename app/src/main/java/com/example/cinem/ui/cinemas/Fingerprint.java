@@ -11,9 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cinem.R;
 import com.example.cinem.ui.ReminderBroadcast;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TimeZone;
 
 
@@ -49,7 +52,31 @@ public class Fingerprint extends AppCompatActivity {
         fingerprint.setText(cinemaName+filmeId+hora+numTickets+email+preco);
 
 
-        Intent intent = new Intent(Fingerprint.this, ReminderBroadcast.class);
+        insertDBticket();
+        notification();
+    }
+
+    private void insertDBticket() {
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("cinema", cinemaName);
+        data.put("filme", filmeId);
+        data.put("name", filmeName);
+        data.put("numTickets", numTickets);
+        data.put("schedule", hora);
+        data.put("qrCode","Cinema: "+cinemaName+", Filme: "+filmeId+", Hora: "+hora+", NumTickets: "+numTickets+", email: "+email);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("tickets").document(email).collection("tickets").add(data);
+
+        Map<String, Object> data2 = new HashMap<>();
+        data2.put("notification", filmeName+" starts at "+hora+" in "+cinemaName);
+        db.collection(email).add(data2);
+
+    }
+
+    private void notification(){
+        Intent intent = new Intent(Fingerprint.this, ReminderBroadcast.class).putExtra("filmeName",filmeName);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(Fingerprint.this,0,intent,0);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
@@ -63,14 +90,13 @@ public class Fingerprint extends AppCompatActivity {
 
         Date sessao_time = new Date(cal.get(Calendar.YEAR)-1900,cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH),Integer.parseInt(arrOfStr[0]),Integer.parseInt(arrOfStr[1]));
 
-        long seconds_diff = sessao_time.getTime()-timeAtButtonClick;
+        long seconds_diff = (sessao_time.getTime()-timeAtButtonClick) - 5*60;
 
         Log.d("tag", String.valueOf(seconds_diff));
 
         alarmManager.set(AlarmManager.RTC_WAKEUP,
                 timeAtButtonClick+seconds_diff,
                 pendingIntent);
-
     }
 
 
