@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "505911816682",
+    "project_id": "cinem-e33f1",
+    "storage_bucket": "cinem-e33f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505911816682:android:f672b93a1eed6c8d08c293",
+        "android_client_info": {
+          "package_name": "com.example.cinem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505911816682-973mmv373du4lds7fstvgjo332v4qk8p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cinem",
+            "certificate_hash": "f89cae6a1ce2455a76ee5a86cd25fdd6d41b314d"
+          }
+        },
+        {
+          "client_id": "505911816682-vh0ll9ldu3jfmn39mcjth9r6aek3m044.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxBSoWier1XtyY_wmPQYBBgJ_kc3ZjCKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505911816682-vh0ll9ldu3jfmn39mcjth9r6aek3m044.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

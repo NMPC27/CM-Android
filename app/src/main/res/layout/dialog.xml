@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/cinema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cinema:" />
+
+        <TextView
+            android:id="@+id/filme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cinema"
+            android:layout_marginTop="10dp"
+            android:text="Filme:" />
+
+        <TextView
+            android:id="@+id/sessao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/filme"
+            android:layout_marginTop="10dp"
+            android:text="Sessão:" />
+
+        <TextView
+            android:id="@+id/bilhetes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sessao"
+            android:layout_marginTop="10dp"
+            android:text="Bilhetes:" />
+
+        <TextView
+            android:id="@+id/preco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bilhetes"
+            android:layout_marginTop="10dp"
+            android:text="Preço:" />
+    </RelativeLayout>
+
+</RelativeLayout>
