@@ -21,11 +21,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -99,8 +103,32 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAuth.signInWithCredential(credential)
                 .addOnSuccessListener(this, authResult -> {
                     FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                    startActivity(new Intent(MainActivity.this,Menu.class).putExtra("user",user.getEmail()));
-                    finish();
+
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                    db.collection("admin")
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    Boolean found=false;
+                                    if (task.isSuccessful()) {
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
+                                            if ( document.getId().equals(user.getEmail()) ){
+                                                found=true;
+                                                startActivity(new Intent(MainActivity.this,ScanQR.class));
+                                                finish();
+                                            }
+                                        }
+                                    } else {
+                                        Log.w("TAG", "Error getting documents.", task.getException());
+                                    }
+                                    if(found==false){
+                                        startActivity(new Intent(MainActivity.this,Menu.class).putExtra("user",user.getEmail()));
+                                        finish();
+                                    }
+                                }
+                            });
                 })
                 .addOnFailureListener(this, e -> Toast.makeText(MainActivity.this, "Authentication failed.",
                         Toast.LENGTH_SHORT).show());
