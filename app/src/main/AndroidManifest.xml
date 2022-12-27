@@ -57,6 +57,8 @@
                 android:value="" />
 
         </activity>
+
+        <receiver android:name=".ui.ReminderBroadcast" />
     </application>
 
 </manifest>
