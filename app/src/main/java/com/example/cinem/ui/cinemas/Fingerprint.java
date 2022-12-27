@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.cinem.R;
 import com.example.cinem.ui.ReminderBroadcast;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 
 public class Fingerprint extends AppCompatActivity {
@@ -55,9 +58,17 @@ public class Fingerprint extends AppCompatActivity {
         Log.d("noti", String.valueOf(timeAtButtonClick));
         long tenSecMillis = 1000*10;
 
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Lisbon"));
+        String[] arrOfStr = hora.split("h", 2);
+
+        Date sessao_time = new Date(cal.get(Calendar.YEAR)-1900,cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH),Integer.parseInt(arrOfStr[0]),Integer.parseInt(arrOfStr[1]));
+
+        long seconds_diff = sessao_time.getTime()-timeAtButtonClick;
+
+        Log.d("tag", String.valueOf(seconds_diff));
 
         alarmManager.set(AlarmManager.RTC_WAKEUP,
-                timeAtButtonClick+tenSecMillis,
+                timeAtButtonClick+seconds_diff,
                 pendingIntent);
 
     }
