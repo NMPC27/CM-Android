@@ -16,6 +16,7 @@ import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 
+import com.example.cinem.Menu;
 import com.example.cinem.R;
 import com.example.cinem.ui.ReminderBroadcast;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -75,6 +76,9 @@ public class Fingerprint extends AppCompatActivity {
                 Toast.makeText(Fingerprint.this,"Auth succeeded",Toast.LENGTH_SHORT).show();
                 insertDBticket();
                 notification();
+                Intent i=new Intent(Fingerprint.this, Menu.class).putExtra("user",email);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
             }
             @Override
             public void onAuthenticationFailed(){
