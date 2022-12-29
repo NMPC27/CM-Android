@@ -39,7 +39,9 @@ public class Fingerprint extends AppCompatActivity {
     String email;
     double preco;
 
+
     Button btn_fp,btn_fppin;
+    TextView pay_price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,10 @@ public class Fingerprint extends AppCompatActivity {
             email = extras.getString("email");
             preco = extras.getDouble("preco");
         }
+
+        pay_price = findViewById(R.id.pay_price);
+
+        pay_price.setText(String.valueOf(preco)+"€");
 
         btn_fp = findViewById(R.id.btn_fp);
         btn_fppin = findViewById(R.id.btn_fppin);
