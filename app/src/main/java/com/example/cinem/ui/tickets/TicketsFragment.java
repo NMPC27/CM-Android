@@ -38,7 +38,7 @@ public class TicketsFragment extends Fragment {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        db.collection("tickets/tunerding2@gmail.com/tickets")
+        db.collection("tickets/"+user+"/tickets")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
