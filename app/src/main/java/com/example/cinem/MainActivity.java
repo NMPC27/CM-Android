@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         createNotificationChannel();
         login();
+        //startActivity(new Intent(MainActivity.this,Menu.class).putExtra("user","pedro.miguel.01.azurva@gmail.com"));
     }
 
     private void createNotificationChannel() {

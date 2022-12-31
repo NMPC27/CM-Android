@@ -155,8 +155,8 @@ public class Fingerprint extends AppCompatActivity {
     BiometricPrompt.PromptInfo.Builder dialogMetric() {
 
         return new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Biometric Login")
-                .setSubtitle("Login using your biometric credential");
+                .setTitle("Confirm Payment")
+                .setSubtitle("Confirm payment with your biometric credential");
 
     }
 

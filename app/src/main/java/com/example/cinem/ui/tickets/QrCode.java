@@ -36,7 +36,7 @@ public class QrCode extends AppCompatActivity {
 
         MultiFormatWriter writer = new MultiFormatWriter();
         try {
-            BitMatrix matrix = writer.encode(qrcode, BarcodeFormat.QR_CODE,1000,1000);
+            BitMatrix matrix = writer.encode(qrcode, BarcodeFormat.QR_CODE,700,700);
 
             BarcodeEncoder encoder = new BarcodeEncoder();
             Bitmap bitmap = encoder.createBitmap(matrix);

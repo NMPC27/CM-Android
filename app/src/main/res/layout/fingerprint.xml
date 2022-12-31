@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/teal_700"
-        android:text="Login Fingerprint"
+        android:text="Fingerprint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         android:id="@+id/btn_fppin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login Fingerprint + PIN"
+        android:text="Fingerprint + PIN"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

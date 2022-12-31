@@ -12,24 +12,23 @@
         android:layout_height="wrap_content"
         android:text="Cinemas"
         android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.553" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="378dp"
-        android:layout_height="640dp"
+        android:layout_width="328dp"
+        android:layout_height="525dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494">
+        app:layout_constraintVertical_bias="0.73">
 
         <LinearLayout
             android:id="@+id/container"
